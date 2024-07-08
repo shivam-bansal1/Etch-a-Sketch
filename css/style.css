@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 960px;
+    width: 960px;
+    border: 3px solid black;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.square-div {
+    background-color: skyblue;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    opacity: 1;
+}
+
+.square-div:hover {
+    opacity: 1;
+}
+
