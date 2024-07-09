@@ -14,7 +14,8 @@ body {
     margin-bottom: auto;
 }
 
-.grid-button {
+.grid-button, 
+.clear-button {
     background-color: white;
     color: black;
 
@@ -23,11 +24,13 @@ body {
     box-shadow: 5px 5px 5px black;
 }
 
-.grid-button:active {
+.grid-button:active,
+.clear-button:active {
     box-shadow: 2px 2px 2px black;
 }
 
-.grid-button:hover {
+.grid-button:hover,
+.clear-button:hover {
     background-color: rgb(226, 226, 226);
 }
 

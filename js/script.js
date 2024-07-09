@@ -15,6 +15,8 @@ function changeGridSize(gridSize) {
 		squareDiv.style.backgroundColor = randomColor;
 
 		container.appendChild(squareDiv);
+
+		squareDiv.addEventListener('mouseover',() => squareDiv.style.opacity = 1);
 	}
 }
 
@@ -43,3 +45,8 @@ function randomColorNum() {
 function generateRandomColor() {
 	return `rgb(${randomColorNum()}, ${randomColorNum()}, ${randomColorNum()})`;
 }
+
+
+// Clear grid
+let clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click',() => changeGridSize(gridSizeChoice));
