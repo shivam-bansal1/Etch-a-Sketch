@@ -9,7 +9,7 @@ function changeGridSize(gridSize) {
     const containerHeight = parseFloat(containerComputedStyle.height);
 
 	for(let index=0; index < gridSize*gridSize; index++) {   
-		const squareDiv = document.createElement('square-div');
+		const squareDiv = document.createElement('div');
 		squareDiv.classList.add('square-div');
 		const randomColor = generateRandomColor()
 
@@ -19,14 +19,16 @@ function changeGridSize(gridSize) {
 		squareDiv.style.width = `${itemWidth}px`;
 		squareDiv.style.height = `${itemHeight}px`;
 		squareDiv.style.backgroundColor = randomColor;
+		squareDiv.style.opacity = 0;
 		container.appendChild(squareDiv);
-
-		squareDiv.addEventListener('mouseover',() => squareDiv.style.opacity = 1);
 	}
+	startPainting();
 }
 
+
+
 // Grid Size Code
-let gridSizeChoice = 11;
+let gridSizeChoice = 16;
 changeGridSize(gridSizeChoice);
 
 const gridChangeButton = document.querySelector('.grid-button');
@@ -55,3 +57,18 @@ function generateRandomColor() {
 // Clear grid
 let clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click',() => changeGridSize(gridSizeChoice));
+
+// Change shade of color on each hover
+function startPainting() {
+	const gridItems = document.querySelectorAll('.container > div');
+
+		gridItems.forEach(item => {
+			const gridItem = item;
+			gridItem.count = 0;
+			gridItem.addEventListener("mouseover", (event) => {
+				console.log(event);
+				event.target.count += 1;
+				event.target.style.opacity = 0.2 * event.target.count;
+		});
+	});
+}

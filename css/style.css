@@ -47,10 +47,5 @@ body {
 
 .square-div {
     box-sizing: border-box;
-    opacity: 0;
-}
-
-.square-div:hover {
-    opacity: 1;
 }
 
