@@ -6,14 +6,19 @@ function changeGridSize(gridSize) {
 		const squareDiv = document.createElement('square-div');
 		squareDiv.classList.add('square-div');
 
+		const randomColor = generateRandomColor()
+		console.log(randomColor);
+
 		const widthHeight = Math.round(720/gridSize);
 		squareDiv.style.width = `${widthHeight}px`;
 		squareDiv.style.height = `${widthHeight}px`;
+		squareDiv.style.backgroundColor = randomColor;
 
 		container.appendChild(squareDiv);
 	}
 }
 
+// Grid Size Code
 let gridSizeChoice = 16;
 changeGridSize(gridSizeChoice);
 
@@ -28,3 +33,13 @@ gridChangeButton.addEventListener('click', () => {
 	else
 		changeGridSize(gridSizeChoice);
 })
+
+// Random color generator code
+function randomColorNum() {
+	// RGB color value ranges from 0 to 255
+	return Math.floor(Math.random() * 256);
+}
+
+function generateRandomColor() {
+	return `rgb(${randomColorNum()}, ${randomColorNum()}, ${randomColorNum()})`;
+}
